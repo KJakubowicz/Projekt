@@ -1,4 +1,44 @@
 body{
 	
-	background-color:white;
+	background-image:url(img/tlo.png);
+}
+
+#all
+{
+width:1200px;
+height:auto;
+
+margin:auto;
+}
+#logo{
+	margin-bottom:30px;
+}
+#ikony{
+	
+	word-spacing:2.5cm;
+}
+#menu{
+	
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	background-image:url(img/menu.png);
+	
+	word-spacing:1cm;
+	font-size:28px;
+font-style: italic;
+width:500px;
+margin:auto;
+}
+#content{
+	border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	 margin-top:30px;
+	width:1200px;
+	background-image:url(img/cont.png);
+height:500px;
+
 }
