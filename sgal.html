@@ -2,11 +2,52 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="styl.css">
+		
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		
+		<script type="text/javascript">
+		
+			var numer = Math.floor(Math.random()*5)+1;
+			
+			var timer1 = 0;
+			var timer2 = 0;
+			
+			function ustawslajd(nrslajdu)
+			{
+				clearTimeout(timer1);
+				clearTimeout(timer2);
+				numer = nrslajdu - 1;
+				
+				schowaj();
+				setTimeout("zmienslajd()", 500);
+				
+			}
+			
+			function schowaj()
+			{
+				$("#slider").fadeOut(500);
+			}
+		
+			function zmienslajd()
+			{
+				numer++; if (numer>5) numer=1;
+				
+				var plik = "<img src=\"slajdy/slajd" + numer + ".jpg\" />";
+				
+				document.getElementById("slider").innerHTML = plik;
+				$("#slider").fadeIn(500);
+				
+				timer1 = setTimeout("zmienslajd()", 5000);
+				timer2 = setTimeout("schowaj()", 4500);
+			
+			}
+			
+		</script>
 
 </head>
 
 
-	<body>
+	<body onload="zmienslajd()">
 		<div class="all">
 			<div class="logo">
 			<center>
@@ -36,19 +77,13 @@
 			</div>
 			<div class="content">
 			<center>
-<h1>Co to jest Lorem Ipsum?</h1>
-Lorem Ipsum to po prostu fikcyjny tekst branży drukarskiej i składu. Lorem Ipsum jest standardowym tekstem manekina w branży od 1500 roku, kiedy nieznana drukarka wzięła galerię typu i gramoliła się, aby stworzyć książkę z typami. Przetrwał nie tylko pięć wieków, ale także skok do składu elektronicznego, pozostając zasadniczo niezmieniony. Został spopularyzowany w latach sześćdziesiątych wraz z wydaniem arkuszy Letraset zawierających fragmenty Lorem Ipsum, a ostatnio z oprogramowaniem do publikowania na komputerze, takim jak Aldus PageMaker, w tym wersjami Lorem Ipsum.
-			</br>
-<h1>Skąd to pochodzi?</h1>
-Wbrew powszechnemu przekonaniu Lorem Ipsum nie jest zwykłym tekstem. Ma swoje korzenie w klasycznej literaturze łacińskiej z 45 rpne, która ma ponad 2000 lat. Richard McClintock, łaciński profesor w Hampden-Sydney College w Wirginii, odszukał jedno z bardziej niejasnych łacińskich słów consectetur z fragmentu Lorem Ipsum i przeglądając cytaty tego słowa w literaturze klasycznej, odkrył niewątpliwe źródło. Lorem Ipsum pochodzi z rozdziałów 1.10.32 i 1.10.33 „de Finibus Bonorum et Malorum” (Krainy dobra i zła) Cycerona, napisanych w 45 rpne Ta książka jest traktatem o teorii etyki, bardzo popularnym w okresie renesansu. Pierwsza linia Lorem Ipsum, „Lorem ipsum dolor sit amet ..”, pochodzi z linii z sekcji 1.10.32.
-</br><h1>Dlaczego go używamy?</h1>
-Od dawna wiadomo, że czytelnik będzie rozpraszany czytelną zawartością strony, patrząc na jej układ. Chodzi o to, że Lorem Ipsum ma mniej więcej normalny rozkład liter, w przeciwieństwie do „Treść tutaj, treść tutaj”, dzięki czemu wygląda na czytelny angielski. Wiele pakietów do publikowania na komputerach stacjonarnych i edytorów stron internetowych używa teraz Lorem Ipsum jako domyślnego tekstu modelowego, a poszukiwanie hasła „lorem ipsum” odkryje wiele witryn internetowych jeszcze w powijakach. Różne wersje ewoluowały przez lata, czasem przez przypadek, czasem celowo (wstrzyknięty humor i tym podobne).
-
-
+			<h2>Galeria</h2>
+			
+<div id="slider"></div>
 			
 			
 			</center>
-			
+	
 			</div>
 			<div class="footer"><center>
 				W60179 &copy  Kamil Jakubowicz </center>
